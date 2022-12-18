@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginAdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,13 +17,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/', function () {
-    return view('user.base');
+
+Route::get('/login', [LoginController::class, 'login'])->name('login_user');
+Route::get('/login_admin', [LoginAdminController::class, 'login'])->name('login_admin');
+Route::controller(LoginController::class)->group(function(){
+    Route::post('login_user', 'login_action')->name('aksi_login');
 });
 

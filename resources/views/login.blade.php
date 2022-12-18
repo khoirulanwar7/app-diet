@@ -21,13 +21,15 @@
           </h2>
         </div>
         <div class="w-full md:w-1/2 lg:w-1/4 mx-4">
-          <form action="" class="">
+          <form action="{{ route('aksi_login') }}" class="" method="POST">
+            @csrf
+            @method('POST')
             <div class="mb-3 md:mb-6">
               <label for="" class="block mb-2 text-base font-semibold text-gray-700">
                 username
               </label>
               <input type="text"
-                class="border outline-none bg-gray-100 border-gray-300 w-full rounded-md h-8 focus:ring-1 focus:ring-slate-400 focus:border-slate-400 shadow-md"
+                class="border outline-none bg-gray-100 border-gray-300 w-full rounded-md h-11 focus:ring-1 focus:ring-slate-400 focus:border-slate-400 shadow-md"
                 name="username">
             </div>
             <div class="mb-3 md:mb-6">
@@ -35,11 +37,11 @@
                 Password
               </label>
               <input type="password"
-                class="border outline-none bg-gray-100 border-gray-300 w-full rounded-md h-8 focus:ring-1 focus:ring-slate-400 focus:border-slate-400 shadow-md"
+                class="border outline-none bg-gray-100 border-gray-300 w-full rounded-md h-11 focus:ring-1 focus:ring-slate-400 focus:border-slate-400 shadow-md"
                 name="password">
             </div>
-            <div class="mt-8">
-              <button class="py-1.5 w-full shadow-md bg-blue-900 hover:bg-blue-800 hover:shadow-xl rounded-lg text-white font-semibold">
+            <div class="mt-10">
+              <button class="py-2.5 w-full shadow-md bg-blue-900 hover:bg-blue-800 hover:shadow-xl rounded-lg text-white font-semibold">
                 SIGN IN
               </button>
             </div>
